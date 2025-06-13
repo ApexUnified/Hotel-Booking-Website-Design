@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MDE Reservation</title>
+    <link rel="stylesheet" href="src/output.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="min-h-screen flex flex-col bg-gradient-to-br from-slate-50 to-blue-50 ">
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-lg  w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-4 group">
+                    <div class="relative">
+                        <a href="index.html">
+                            <img src="assets/images/Logo.png"
+                                class="h-25 w-50 rounded-xl group-hover:scale-105 transition-all" alt="MDE Hotel Logo">
+                        </a>
+                        <div class="absolute -top-1 -right-1 w-4 h-4  rounded-full ">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="relative text-gray-700  transition-colors duration-300 group">
+                        Home
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="accomodations.html"
+                        class="relative text-gray-700 hover:text-blue-600 transition-colors duration-300 group">
+                        Accommodations
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="reservation.html"
+                        class="relative    text-gray-700 hover:text-blue-600 transition-colors duration-300 group">
+                        Reservations
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="contact.html"
+                        class="relative text-gray-700 hover:text-blue-600 transition-colors duration-300 group">
+                        Contact
+                        <span
+                            class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300"
+                    onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden bg-white border-t border-gray-200 hidden">
+            <div class="px-6 py-4 space-y-3">
+                <a href="index.html"
+                    class="block text-gray-700 hover:text-blue-600 transition-colors duration-300 py-2">Home</a>
+                <a href="accomodations.html"
+                    class="block text-gray-700 hover:text-blue-600 transition-colors duration-300 py-2">Accommodations</a>
+                <a href="reservation.html"
+                    class="block text-gray-700 hover:text-blue-600 transition-colors duration-300 py-2">Reservations</a>
+                <a href="contact.html"
+                    class="block text-gray-700 hover:text-blue-600 transition-colors duration-300 py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <main class="flex-grow min-h-screen py-16 ">
+
+        <!-- Gallery Section -->
+        <section class="max-w-7xl mx-auto bg-white shadow-lg p-3 rounded-2xl my-3">
+
+            <div
+                class="flex justify-center sm:justify-center md:justify-between lg:justify-between xl:justify-between items-center flex-wrap">
+                <div class="left">
+                    <div class="mb-3 flex items-center space-x-3">
+                        <h3 class="text-4xl font-bold text-gray-800">Guangzhou Baiyun Hotel</h3>
+                        <p>⭐⭐⭐⭐⭐</p>
+                    </div>
+
+                    <div class="flex space-x-2 items-center flex-wrap">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                        </svg>
+
+                        <p class="text-gray-800"> No. 367 East Huanshi Road, Yuexiu District, Guangzhou, Guangdong
+                            510065, China <a href="" class="text-blue-700 font-bold hover:text-blue-400">Show On
+                                Maps</a></p>
+
+                    </div>
+                </div>
+
+                <div class="right flex justify-center flex-col items-center flex-wrap">
+                    <div class="flex items-center space-x-2">
+                        <p class="text-sm text-gray-800 line-through">$ 1000</p>
+                        <p class="text-3xl font-semibold text-gray-800">$ 500</p>
+                    </div>
+
+                    <a href="#Rooms"
+                        class="w-50 h-14 bg-blue-800 rounded-2xl text-white text-2xl cursor-pointer font-bold hover:bg-blue-600 flex items-center space-x-2 justify-center">
+
+
+
+                        Select Room
+
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6 mt-1 mx-1">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9 12l2 2l4-4M12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9s-9 4.03-9 9s4.03 9 9 9z" />
+                        </svg>
+
+
+
+                    </a>
+                </div>
+
+            </div>
+
+
+
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 w-full p-4">
+
+                <!-- Example Image Card with responsive height -->
+                <div
+                    class="h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 cursor-pointer hover:scale-105 transition-all rounded-2xl overflow-hidden">
+                    <img src="assets/images/1.jpg" alt="Image" class="w-full h-full object-cover rounded-lg">
+                </div>
+
+                <div
+                    class="h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 cursor-pointer hover:scale-105 transition-all rounded-2xl overflow-hidden">
+                    <img src="assets/images/2.jpg" alt="Image" class="w-full h-full object-cover rounded-lg">
+                </div>
+
+                <div
+                    class="h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 cursor-pointer hover:scale-105 transition-all rounded-2xl overflow-hidden">
+                    <img src="assets/images/3.jpg" alt="Image" class="w-full h-full object-cover rounded-lg">
+                </div>
+
+
+                <div
+                    class="h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 cursor-pointer hover:scale-105 transition-all rounded-2xl overflow-hidden">
+                    <img src="assets/images/1.jpg" alt="Image" class="w-full h-full object-cover rounded-lg">
+                </div>
+
+                <div
+                    class="h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 cursor-pointer hover:scale-105 transition-all rounded-2xl overflow-hidden">
+                    <img src="assets/images/2.jpg" alt="Image" class="w-full h-full object-cover rounded-lg">
+                </div>
+
+                <div
+                    class="h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 cursor-pointer hover:scale-105 transition-all rounded-2xl overflow-hidden">
+                    <img src="assets/images/3.jpg" alt="Image" class="w-full h-full object-cover rounded-lg">
+                </div>
+
+                <div
+                    class="h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 cursor-pointer hover:scale-105 transition-all rounded-2xl overflow-hidden">
+                    <img src="assets/images/3.jpg" alt="Image" class="w-full h-full object-cover rounded-lg">
+                </div>
+
+                <!-- Add more as needed... -->
+
+                <!-- Last image with overlay -->
+                <div
+                    class="h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 relative overflow-hidden rounded-2xl hover:scale-105 transition-all">
+                    <img src="assets/images/3.jpg" alt="See All" class="w-full h-full object-cover rounded-lg">
+                    <div class="absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center">
+                        <p class="text-white text-sm font-semibold z-10">See All 270 Photos</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Amanities & About Hotel Details section -->
+        <section class="max-w-7xl mx-auto px-4 py-6 grid lg:grid-cols-3 gap-6 bg-white shadow-lg p-3 rounded-2xl">
+
+            <div class="lg:col-span-2 space-y-6">
+
+                <!-- Amenities Section -->
+                <div>
+                    <h2 class="text-lg text-gray-800 font-bold mb-3">Amenities</h2>
+                    <div class="flex flex-wrap gap-4 text-sm text-gray-700">
+                        <div class="flex items-center gap-1">
+                            🚗 <span>Private parking</span> <span
+                                class="text-xs bg-blue-100 text-blue-700 px-1 rounded">Free</span>
+                        </div>
+                        <div class="flex items-center text-gray-800  gap-1">✈️ Priority airport pick-up</div>
+                        <div class="flex items-center text-gray-800  gap-1">🚘 Car rentals</div>
+                        <div class="flex items-center  text-gray-800 gap-1">🃏 Cardroom</div>
+                        <div class="flex items-center text-gray-800  gap-1">🍴 4 Restaurants</div>
+                        <div class="flex items-center text-gray-800  gap-1">🚖 Taxi booking service</div>
+                        <div class="flex items-center  text-gray-800 gap-1">📤 Priority airport drop-off</div>
+                        <div class="flex items-center text-gray-800  gap-1">🏢 Conference room</div>
+                    </div>
+                    <a href="#" class="text-blue-600 text-sm mt-2 inline-block hover:underline">All Amenities</a>
+                </div>
+
+                <!-- Property Description -->
+                <div>
+                    <h2 class="text-lg font-bold mb-2 text-gray-800">Property Description</h2>
+                    <p class="text-sm text-gray-700">
+                        The hotel is a large business hotel, which won the "China Hotel Golden Star Award" in 2010, the
+                        honor of China's hotel industry. The hotel stands on Huanshi East Road in the central business
+                        district of Guangzhou and the core of the golden business circle. Stylish and modern room
+                        design; well-equipped conference and banquet venues; various dining options; considerate service
+                        to create perfect moments for you.
+                        The hotel is surrounded by famous international famous stores and high-end office buildings,
+                        showing the style of international famous cities: La Perle Plaza, World Trade Center, Friendship
+                        Store, which are colorful and exciting; it is adjacent to the famous style bar street, which not
+                        only gathers famous flavors of Chaozhou, Guangdong, Hunan, Sichuan, etc. Food, more concentrated
+                        classic food from all over the world, guests can enjoy the prosperity and charm of modern
+                        metropolis within five minutes' walk...
+
+                    </p>
+                    <a href="#" class="text-blue-600 text-sm mt-1 hover:underline">Show More</a>
+                </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="space-y-6">
+                <!-- Rating -->
+                <div class="bg-white shadow p-4 rounded-xl space-y-2">
+                    <div class="bg-blue-800 text-white text-sm px-3 py-1 rounded-full inline-block">
+                        <span class="font-bold text-lg">9.3</span><sup>/10</sup> Very Good
+                    </div>
+                    <p class="text-sm text-gray-800">Locational position with good Indian vegetarian food availability
+                    </p>
+                    <a href="#" class="text-blue-600 text-sm hover:underline">All 6,200 Reviews</a>
+                </div>
+
+                <!-- Surroundings -->
+                <div class="bg-white shadow p-4 rounded-xl">
+                    <h2 class="text-lg font-bold mb-3 text-gray-800">Surroundings</h2>
+                    <ul class="text-sm text-gray-800 space-y-2">
+                        <li>🚇 Metro: Taojin (160m)</li>
+                        <li>🚇 Metro: Xiaobei (960m)</li>
+                        <li>✈️ Airport: Guangzhou Baiyun Intl (32.1 km)</li>
+                        <li>✈️ Airport: Foshan Shadi Airport (32.4 km)</li>
+                        <li>🚆 Train: Guangzhou Railway Station (3.5 km)</li>
+                    </ul>
+                    <a href="#" class="text-blue-600 text-sm hover:underline mt-2 inline-block">View on Map</a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Rooms Section -->
+        <section class="max-w-7xl mx-auto my-3" id="Rooms">
+            <div class="bg-white shadow-md rounded-lg p-4 mb-4">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Business Twin Room</h2>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3 mb-4 md:mb-0">
+                        <img src="assets/images/3.jpg" alt="Room Image" class="w-full h-48 object-cover rounded-lg">
+                        <div class="mt-2 text-gray-800">
+                            <p class="text-gray-800"><span class="font-medium">2 single beds</span></p>
+                            <p class="text-gray-800">Some non-smoking rooms</p>
+                            <p class="text-gray-800">30m² | Floor: 19-25</p>
+                            <p class="text-gray-800">Free Wi-Fi</p>
+                            <p class="text-gray-800">Air conditioning</p>
+                            <p class="text-gray-800">Private bathroom</p>
+                            <p class="text-gray-800"><a href="#" class="text-blue-500">Room Details</a></p>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 md:pl-4">
+                        <table class="w-full text-left text-gray-800">
+                            <thead>
+                                <tr class="border-b ">
+                                    <th class="py-2">Your Choices</th>
+                                    <th class="py-2">Sleeps</th>
+                                    <th class="py-2">Today's Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="py-2">
+                                        <p class="text-green-600 font-medium">Today's best price!</p>
+                                        <ul class="list-none pl-0">
+                                            <li><span class="text-blue-500">✓</span> Great breakfast for Rs. 5,789.99
+                                                (optional)</li>
+                                            <li><span class="text-red-500">✗</span> Non-refundable</li>
+                                            <li><span class="text-blue-500">✓</span> Instant Confirmation</li>
+                                            <li><span class="text-blue-500">≡</span> Prepay online</li>
+                                        </ul>
+                                    </td>
+                                    <td class="py-2 text-center"><span class="text-2xl">👥</span></td>
+                                    <td class="py-2">
+                                        <p class="text-lg font-medium">Rs. 23,149 <span
+                                                class="line-through text-gray-800">Rs. 23,076</span></p>
+                                        <p class="text-sm text-gray-800">Total price: Rs. 23,076 incl. taxes & fees</p>
+                                        <button
+                                            class="mt-2 w-full bg-blue-800 text-white py-2 rounded-2xl cursor-pointer hover:bg-blue-600 flex items-center justify-center">
+                                            Reserve
+                                            <svg class="w-5 h-5 ml-2 mt-1" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bg-white shadow-md rounded-lg p-4 mb-4">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Business Twin Room</h2>
+                <div class="flex flex-col md:flex-row">
+                    <div class="md:w-1/3 mb-4 md:mb-0">
+                        <img src="assets/images/2.jpg" alt="Room Image" class="w-full h-48 object-cover rounded-lg">
+                        <div class="mt-2 text-gray-800">
+                            <p class="text-gray-800"><span class="font-medium">2 single beds</span></p>
+                            <p class="text-gray-800">Some non-smoking rooms</p>
+                            <p class="text-gray-800">30m² | Floor: 19-25</p>
+                            <p class="text-gray-800">Free Wi-Fi</p>
+                            <p class="text-gray-800">Air conditioning</p>
+                            <p class="text-gray-800">Private bathroom</p>
+                            <p class="text-gray-800"><a href="#" class="text-blue-500">Room Details</a></p>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 md:pl-4">
+                        <table class="w-full text-left text-gray-800">
+                            <thead>
+                                <tr class="border-b ">
+                                    <th class="py-2">Your Choices</th>
+                                    <th class="py-2">Sleeps</th>
+                                    <th class="py-2">Today's Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="py-2">
+                                        <p class="text-green-600 font-medium">Today's best price!</p>
+                                        <ul class="list-none pl-0">
+                                            <li><span class="text-blue-500">✓</span> Great breakfast for Rs. 5,789.99
+                                                (optional)</li>
+                                            <li><span class="text-red-500">✗</span> Non-refundable</li>
+                                            <li><span class="text-blue-500">✓</span> Instant Confirmation</li>
+                                            <li><span class="text-blue-500">≡</span> Prepay online</li>
+                                        </ul>
+                                    </td>
+                                    <td class="py-2 text-center"><span class="text-2xl">👥</span></td>
+                                    <td class="py-2">
+                                        <p class="text-lg font-medium">Rs. 23,149 <span
+                                                class="line-through text-gray-800">Rs. 23,076</span></p>
+                                        <p class="text-sm text-gray-800">Total price: Rs. 23,076 incl. taxes & fees</p>
+                                        <button
+                                            class="mt-2 w-full bg-blue-800 text-white py-2 rounded-2xl cursor-pointer hover:bg-blue-600 flex items-center justify-center">
+                                            Reserve
+                                            <svg class="w-5 h-5 ml-2 mt-1" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <!-- Property Description -->
+        <section class="max-w-7xl mx-auto bg-white shadow-lg rounded-2xl my-3 p-3">
+            <h2 class="text-lg font-bold mb-2 text-gray-800">Property Description</h2>
+
+            <div class="flex items-center justify-start space-x-4 text-gray-800">
+                <h4 class="text-sm font-bold">
+                    Opened: 1976
+                </h4>
+
+                <h4 class="text-sm font-bold">
+                    Renovated: 2004
+                </h4>
+
+
+                <h4 class="text-sm font-bold">
+                    Number of Rooms: 506
+                </h4>
+            </div>
+
+            <p class="my-3 text-gray-800">
+                The hotel is a large business hotel, which won the "China Hotel Golden Star Award" in 2010, the honor of
+                China's hotel industry. The hotel stands on Huanshi East Road in the central business district of
+                Guangzhou and the core of the golden business circle. Stylish and modern room design; well-equipped
+                conference and banquet venues; various dining options; considerate service to create perfect moments for
+                you.
+
+                <br>
+                <br>
+
+                The hotel is surrounded by famous international famous stores and high-end office buildings, showing the
+                style of international famous cities: La Perle Plaza, World Trade Center, Friendship Store, which are
+                colorful and exciting; it is adjacent to the famous style bar street, which not only gathers famous
+                flavors of Chaozhou, Guangdong, Hunan, Sichuan, etc. Food, more concentrated classic food from all over
+                the world, guests can enjoy the prosperity and charm of modern metropolis within five minutes' walk.
+
+                <br>
+                <br>
+
+                Hotel transportation is convenient, cost-effective. The subway station is close at hand, and it only
+                takes a short drive to the exhibition center. It is an ideal choice for Guangzhou exhibition hotel
+                reservations such as the Canton Fair.
+
+                <br>
+                <br>
+
+                The rooms are equipped with minibars, personal safes, etc., and the public facilities are equipped with
+                gymnasiums and swimming pools. The high-altitude swimming pool located on the 33rd floor allows you to
+                swim in the sky and have a panoramic view of the city.
+
+                <br>
+                <br>
+
+                The hotel also has Baiyunxuan Chinese Restaurant, Baiyunyan Chinese Restaurant, Xiangyun Western
+                Restaurant, and Italian Restaurant, presenting you authentic Cantonese cuisine, exquisite refreshments,
+                or Western cuisine.
+
+                <br>
+                <br>
+
+                The hotel is equipped with large multi-functional halls and meeting rooms of different specifications,
+                which can meet the choices of various business meetings and banquets.
+            </p>
+
+        </section>
+
+    </main>
+
+
+
+
+    <section class="pt-16">
+        <footer class="bg-blue-950 backdrop-blur-md shadow-lg">
+            <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+                <div class="md:flex md:justify-between">
+                    <div class="mb-6 md:mb-0">
+                        <div class="relative">
+                            <img src="assets/images/Logo.png" class="h-25 w-50 rounded-xl group-hover:scale-105"
+                                alt="Luxe Hotel Logo">
+                            <div class="absolute -top-1 -right-1 w-4 h-4  rounded-full ">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+
+                        <div>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us
+                            </h2>
+                            <ul class="text-white  font-medium">
+                                <li class="mb-4">
+                                    <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
+                                </li>
+                                <li>
+                                    <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Discord</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                            <ul class="text-white  font-medium">
+                                <li class="mb-4">
+                                    <a href="#" class="hover:underline">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-6 border-gray-200 sm:mx-auto  lg:my-8" />
+                <div class="sm:flex sm:items-center sm:justify-between">
+                    <span class="text-sm text-white sm:text-center">©
+                        <span id="reserved_rights_year">
+                        </span>
+                        <a href="#" class="hover:underline">
+                            MDE Reservation
+                        </a>.
+                        All Rights Reserved.
+                    </span>
+                    <div class="flex mt-4 sm:justify-center sm:mt-0">
+                        <a href="#" class="text-white hover:text-gray-900 ">
+                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 8 19">
+                                <path fill-rule="evenodd"
+                                    d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span class="sr-only">Facebook page</span>
+                        </a>
+                        <a href="#" class="text-white hover:text-gray-900  ms-5">
+                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 21 16">
+                                <path
+                                    d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z" />
+                            </svg>
+                            <span class="sr-only">Discord community</span>
+                        </a>
+                        <a href="#" class="text-white hover:text-gray-900  ms-5">
+                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 17">
+                                <path fill-rule="evenodd"
+                                    d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span class="sr-only">Twitter page</span>
+                        </a>
+                        <a href="#" class="text-white hover:text-gray-900  ms-5">
+                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span class="sr-only">GitHub account</span>
+                        </a>
+                        <a href="#" class="text-white hover:text-gray-900  ms-5">
+                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span class="sr-only">Dribbble account</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </section>
+
+
+</body>
+
+<script>
+
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('hidden');
+    }
+
+</script>
+
+
+</html>

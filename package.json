@@ -1,7 +1,16 @@
 {
+
+  "type": "module",
+
+  "scripts": {
+    "build": "postcss src/input.css -o src/output.css",
+    "watch":"postcss src/input.css -o src/output.css --watch"
+  },
+  
   "dependencies": {
-    "@tailwindcss/cli": "^4.1.10",
-    "flowbite": "^3.1.2",
+    "@tailwindcss/postcss": "^4.1.10",
+    "postcss": "^8.5.5",
+    "postcss-cli": "^11.0.1",
     "tailwindcss": "^4.1.10"
   }
 }

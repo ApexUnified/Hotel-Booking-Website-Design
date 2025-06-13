@@ -19,8 +19,10 @@
                 <!-- Logo -->
                 <div class="flex items-center space-x-4 group">
                     <div class="relative">
-                        <img src="assets/images/Logo.png"
-                            class="h-25 w-50 rounded-xl group-hover:scale-105 transition-all" alt="MDE Hotel Logo">
+                        <a href="index.html">
+                            <img src="assets/images/Logo.png"
+                                class="h-25 w-50 rounded-xl group-hover:scale-105 transition-all" alt="MDE Hotel Logo">
+                        </a>
                         <div class="absolute -top-1 -right-1 w-4 h-4  rounded-full ">
                         </div>
                     </div>
@@ -132,7 +134,7 @@
 
                         <!-- Navigation Arrows -->
                         <button onclick="previousSlide()"
-                            class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 p-3 rounded-full transition-all duration-300 group">
+                            class="absolute left-4 top-1/2 cursor-pointer -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 p-3 rounded-full transition-all duration-300 group">
                             <svg class="w-6 h-6 text-white group-hover:scale-110 transition-transform" fill="none"
                                 stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -141,7 +143,7 @@
                             </svg>
                         </button>
                         <button onclick="nextSlide()"
-                            class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 p-3 rounded-full transition-all duration-300 group">
+                            class="absolute right-4 top-1/2 cursor-pointer -translate-y-1/2 bg-white/20 backdrop-blur-sm hover:bg-white/30 p-3 rounded-full transition-all duration-300 group">
                             <svg class="w-6 h-6 text-white group-hover:scale-110 transition-transform" fill="none"
                                 stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
@@ -172,13 +174,14 @@
                         <p class="text-gray-600">Find the perfect dates for your perfect getaway</p>
                     </div>
 
-                    <form class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 items-end">
+                    <form action="#" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 items-end">
                         <div class="space-y-2">
                             <label class="block text-sm font-semibold text-gray-700" for="start_date">Check-in
-                                Date</label>
+                                Date
+                            </label>
                             <input type="date" id="start_date"
                                 class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 bg-white/50 backdrop-blur-sm"
-                                placeholder="YY-MM-DD">
+                                placeholder="YY-MM-DD" required>
                         </div>
 
                         <div class="space-y-2">
@@ -186,13 +189,14 @@
                                 Date</label>
                             <input type="date" id="end_date"
                                 class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 bg-white/50 backdrop-blur-sm"
-                                placeholder="YY-MM-DD">
+                                placeholder="YY-MM-DD" required>
                         </div>
 
                         <div class="space-y-2">
                             <label class="block text-sm font-semibold text-gray-700">Adults</label>
-                            <select
+                            <select required
                                 class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 bg-white/50 backdrop-blur-sm">
+                                <option value="">Select Adult</option>
                                 <option>1 Adult</option>
                                 <option>2 Adults</option>
                                 <option>3 Adults</option>
@@ -202,8 +206,9 @@
 
                         <div class="space-y-2">
                             <label class="block text-sm font-semibold text-gray-700">Children</label>
-                            <select
+                            <select required
                                 class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 bg-white/50 backdrop-blur-sm">
+                                <option value="">Select Children</option>
                                 <option>0 Children</option>
                                 <option>1 Child</option>
                                 <option>2 Children</option>
@@ -218,8 +223,8 @@
                         </div>
 
                         <button type="submit"
-                            class="w-50 bg-gradient-to-r  text-white bg-blue-600 px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 group">
-                            <span>Book Now</span>
+                            class="w-50   text-white cursor-pointer bg-blue-600 px-8 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 group">
+                            <span>Search Hotel</span>
                             <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none"
                                 stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -439,39 +444,26 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div
                         class="group bg-white/60 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/20 max-w-sm">
-                        <!-- Image -->
-                        <img src="https://mde-reservas-frontend.herokuapp.com/static/media/quarto2.cb7bcf424f429614f244.jpg"
-                            alt="Deluxe Room" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <!-- Hotel Image -->
+                        <img src="assets/images/3.jpg" alt="Hotel Paradise"
+                            class="w-full h-48 object-cover rounded-xl mb-4">
 
-                        <!-- Title -->
-                        <h2 class="text-xl font-semibold text-gray-900 mb-2">Deluxe Double Room</h2>
+                        <!-- Hotel Name -->
+                        <h2 class="text-xl font-semibold text-gray-900 mb-2">Hotel Paradise</h2>
 
-                        <!-- Price -->
-                        <p class="text-lg font-bold text-blue-600 mb-1">Price: $300 / night</p>
-
-                        <!-- Room Type -->
-                        <p class="text-sm text-gray-700 mb-1">Type: Suite</p>
-
-                        <!-- Capacity -->
-                        <p class="text-sm text-gray-700 mb-1">Max Guests: 2 Adults, 1 Child</p>
-
-                        <!-- Availability -->
-                        <p class="text-sm text-green-600 font-medium mb-3">Available</p>
-
-                        <!-- Description -->
+                        <!-- Short Description -->
                         <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                            Transform meetings into opportunities and business into success in our hotel, where every
-                            detail
-                            is crafted to inspire productivity and collaboration.
+                            Located in the heart of the city, Hotel Paradise offers luxurious rooms, rooftop dining, and
+                            breathtaking views.
                         </p>
 
-                        <!-- Action -->
-                        <a href="#"
+                        <!-- Action Button -->
+                        <a href="view_rooms.html"
                             class="inline-flex text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-4 py-2 text-center">
-                            Book Now
-                            <svg class="w-5 h-5 mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            View Rooms
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </a>
                     </div>
@@ -479,39 +471,26 @@
 
                     <div
                         class="group bg-white/60 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/20 max-w-sm">
-                        <!-- Image -->
-                        <img src="https://mde-reservas-frontend.herokuapp.com/static/media/quarto2.cb7bcf424f429614f244.jpg"
-                            alt="Deluxe Room" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <!-- Hotel Image -->
+                        <img src="assets/images/2.jpg" alt="Hotel Paradise"
+                            class="w-full h-48 object-cover rounded-xl mb-4">
 
-                        <!-- Title -->
-                        <h2 class="text-xl font-semibold text-gray-900 mb-2">Deluxe Double Room</h2>
+                        <!-- Hotel Name -->
+                        <h2 class="text-xl font-semibold text-gray-900 mb-2">Hotel Paradise</h2>
 
-                        <!-- Price -->
-                        <p class="text-lg font-bold text-blue-600 mb-1">Price: $300 / night</p>
-
-                        <!-- Room Type -->
-                        <p class="text-sm text-gray-700 mb-1">Type: Suite</p>
-
-                        <!-- Capacity -->
-                        <p class="text-sm text-gray-700 mb-1">Max Guests: 2 Adults, 1 Child</p>
-
-                        <!-- Availability -->
-                        <p class="text-sm text-green-600 font-medium mb-3">Available</p>
-
-                        <!-- Description -->
+                        <!-- Short Description -->
                         <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                            Transform meetings into opportunities and business into success in our hotel, where every
-                            detail
-                            is crafted to inspire productivity and collaboration.
+                            Located in the heart of the city, Hotel Paradise offers luxurious rooms, rooftop dining, and
+                            breathtaking views.
                         </p>
 
-                        <!-- Action -->
-                        <a href="#"
+                        <!-- Action Button -->
+                        <a href="view_rooms.html"
                             class="inline-flex text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-4 py-2 text-center">
-                            Book Now
-                            <svg class="w-5 h-5 mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            View Rooms
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </a>
                     </div>
@@ -519,41 +498,30 @@
 
 
 
+
+
                     <div
                         class="group bg-white/60 backdrop-blur-md rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-white/20 max-w-sm">
-                        <!-- Image -->
-                        <img src="https://mde-reservas-frontend.herokuapp.com/static/media/quarto2.cb7bcf424f429614f244.jpg"
-                            alt="Deluxe Room" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <!-- Hotel Image -->
+                        <img src="assets/images/1.jpg" alt="Hotel Paradise"
+                            class="w-full h-48 object-cover rounded-xl mb-4">
 
-                        <!-- Title -->
-                        <h2 class="text-xl font-semibold text-gray-900 mb-2">Deluxe Double Room</h2>
+                        <!-- Hotel Name -->
+                        <h2 class="text-xl font-semibold text-gray-900 mb-2">Hotel Paradise</h2>
 
-                        <!-- Price -->
-                        <p class="text-lg font-bold text-blue-600 mb-1">Price: $300 / night</p>
-
-                        <!-- Room Type -->
-                        <p class="text-sm text-gray-700 mb-1">Type: Suite</p>
-
-                        <!-- Capacity -->
-                        <p class="text-sm text-gray-700 mb-1">Max Guests: 2 Adults, 1 Child</p>
-
-                        <!-- Availability -->
-                        <p class="text-sm text-green-600 font-medium mb-3">Available</p>
-
-                        <!-- Description -->
+                        <!-- Short Description -->
                         <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                            Transform meetings into opportunities and business into success in our hotel, where every
-                            detail
-                            is crafted to inspire productivity and collaboration.
+                            Located in the heart of the city, Hotel Paradise offers luxurious rooms, rooftop dining, and
+                            breathtaking views.
                         </p>
 
-                        <!-- Action -->
-                        <a href="#"
+                        <!-- Action Button -->
+                        <a href="view_rooms.html"
                             class="inline-flex text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-4 py-2 text-center">
-                            Book Now
-                            <svg class="w-5 h-5 mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            View Rooms
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
                             </svg>
                         </a>
                     </div>
@@ -587,7 +555,7 @@
                         <div>
                             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us
                             </h2>
-                            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                            <ul class="text-white  font-medium">
                                 <li class="mb-4">
                                     <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
                                 </li>
@@ -598,7 +566,7 @@
                         </div>
                         <div>
                             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-                            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                            <ul class="text-white  font-medium">
                                 <li class="mb-4">
                                     <a href="#" class="hover:underline">Privacy Policy</a>
                                 </li>
@@ -609,9 +577,9 @@
                         </div>
                     </div>
                 </div>
-                <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+                <hr class="my-6 border-gray-200 sm:mx-auto  lg:my-8" />
                 <div class="sm:flex sm:items-center sm:justify-between">
-                    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">©
+                    <span class="text-sm text-white sm:text-center">©
                         <span id="reserved_rights_year">
                         </span>
                         <a href="#" class="hover:underline">
@@ -620,7 +588,7 @@
                         All Rights Reserved.
                     </span>
                     <div class="flex mt-4 sm:justify-center sm:mt-0">
-                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                        <a href="#" class="text-white hover:text-gray-900 ">
                             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="currentColor" viewBox="0 0 8 19">
                                 <path fill-rule="evenodd"
@@ -629,7 +597,7 @@
                             </svg>
                             <span class="sr-only">Facebook page</span>
                         </a>
-                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                        <a href="#" class="text-white hover:text-gray-900  ms-5">
                             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="currentColor" viewBox="0 0 21 16">
                                 <path
@@ -637,7 +605,7 @@
                             </svg>
                             <span class="sr-only">Discord community</span>
                         </a>
-                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                        <a href="#" class="text-white hover:text-gray-900  ms-5">
                             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="currentColor" viewBox="0 0 20 17">
                                 <path fill-rule="evenodd"
@@ -646,7 +614,7 @@
                             </svg>
                             <span class="sr-only">Twitter page</span>
                         </a>
-                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                        <a href="#" class="text-white hover:text-gray-900  ms-5">
                             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd"
@@ -655,7 +623,7 @@
                             </svg>
                             <span class="sr-only">GitHub account</span>
                         </a>
-                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                        <a href="#" class="text-white hover:text-gray-900  ms-5">
                             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd"

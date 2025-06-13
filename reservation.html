@@ -19,8 +19,10 @@
                 <!-- Logo -->
                 <div class="flex items-center space-x-4 group">
                     <div class="relative">
-                        <img src="assets/images/Logo.png"
-                            class="h-25 w-50 rounded-xl group-hover:scale-105 transition-all" alt="MDE Hotel Logo">
+                        <a href="index.html">
+                            <img src="assets/images/Logo.png"
+                                class="h-25 w-50 rounded-xl group-hover:scale-105 transition-all" alt="MDE Hotel Logo">
+                        </a>
                         <div class="absolute -top-1 -right-1 w-4 h-4  rounded-full ">
                         </div>
                     </div>
@@ -29,7 +31,7 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="relative  text-blue-700 transition-colors duration-300 group">
+                    <a href="index.html" class="relative text-gray-700  transition-colors duration-300 group">
                         Home
                         <span
                             class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-full"></span>
@@ -41,7 +43,7 @@
                             class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-full"></span>
                     </a>
                     <a href="reservation.html"
-                        class="relative text-gray-700 hover:text-blue-600 transition-colors duration-300 group">
+                        class="relative   text-blue-700 hover:text-blue-600 transition-colors duration-300 group">
                         Reservations
                         <span
                             class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-full"></span>
@@ -89,36 +91,58 @@
                 <h2 class="text-2xl font-bold mb-6 text-gray-800">Find Your Stay</h2>
                 <form class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Check-in Date</label>
-                        <input type="date"
+                        <label class="block text-sm font-medium text-gray-700 mb-3" for="start_date">
+                            Check-in Date
+                        </label>
+                        <input id="start_date" type="date"
                             class="w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            required />
+                            placeholder="YY-MM-DD" required />
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Check-out Date</label>
-                        <input type="date"
+                        <label class="block text-sm font-medium text-gray-700 mb-3" for="end_date">Check-out
+                            Date</label>
+                        <input type="date" id="end_date"
                             class="w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            required />
+                            placeholder="YY-MM-DD" required />
                     </div>
 
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Adults</label>
-                        <input type="number" min="1" value="1"
-                            class="w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            required />
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-gray-700">Adults</label>
+                        <select
+                            class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 bg-white/50 backdrop-blur-sm">
+                            <option value="">Select Adult</option>
+                            <option>1 Adult</option>
+                            <option>2 Adults</option>
+                            <option>3 Adults</option>
+                            <option>4 Adults</option>
+                        </select>
                     </div>
 
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Children</label>
-                        <input type="number" min="0" value="0"
-                            class="w-full rounded-lg border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">Children</label>
+                        <select
+                            class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-300 bg-white/50 backdrop-blur-sm">
+                            <option value="">Select Children</option>
+                            <option>0 Children</option>
+                            <option>1 Child</option>
+                            <option>2 Children</option>
+                            <option>3 Children</option>
+                        </select>
                     </div>
 
-                    <div class="lg:col-span-4 text-right">
+                    <div class="lg:col-span-4 ">
                         <button type="button" id="search"
-                            class="bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                            class="bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg cursor-pointer hover:bg-blue-700 transition flex justify-center items-center">
+
                             Search Hotels
+
+
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300 mt-1 mx-1"
+                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
                         </button>
                     </div>
                 </form>
@@ -138,7 +162,7 @@
                         <p class="text-lg text-blue-600 font-semibold">From $120/night</p>
                     </div>
                     <div class="flex items-center">
-                        <a href="/hotels/sunshine"
+                        <a href="view_rooms.html"
                             class="inline-block bg-blue-600 text-white font-medium px-4 py-2 rounded-lg hover:bg-blue-700 transition">
                             View Details
                         </a>
@@ -160,8 +184,16 @@
 
                     <div class="flex items-end">
                         <button type="submit"
-                            class="bg-blue-600 text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-700 transition w-full md:w-auto">
+                            class="bg-blue-600 flex justify-center items-center text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-700 transition w-full md:w-auto">
                             Search Reservation
+
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6 mx-2 mt-1">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                            </svg>
+
+
                         </button>
                     </div>
                 </form>
@@ -190,7 +222,7 @@
                         <div>
                             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Follow us
                             </h2>
-                            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                            <ul class="text-white  font-medium">
                                 <li class="mb-4">
                                     <a href="https://github.com/themesberg/flowbite" class="hover:underline ">Github</a>
                                 </li>
@@ -201,7 +233,7 @@
                         </div>
                         <div>
                             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
-                            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                            <ul class="text-white  font-medium">
                                 <li class="mb-4">
                                     <a href="#" class="hover:underline">Privacy Policy</a>
                                 </li>
@@ -212,9 +244,9 @@
                         </div>
                     </div>
                 </div>
-                <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+                <hr class="my-6 border-gray-200 sm:mx-auto  lg:my-8" />
                 <div class="sm:flex sm:items-center sm:justify-between">
-                    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">©
+                    <span class="text-sm text-white sm:text-center">©
                         <span id="reserved_rights_year">
                         </span>
                         <a href="#" class="hover:underline">
@@ -223,7 +255,7 @@
                         All Rights Reserved.
                     </span>
                     <div class="flex mt-4 sm:justify-center sm:mt-0">
-                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+                        <a href="#" class="text-white hover:text-gray-900 ">
                             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="currentColor" viewBox="0 0 8 19">
                                 <path fill-rule="evenodd"
@@ -232,7 +264,7 @@
                             </svg>
                             <span class="sr-only">Facebook page</span>
                         </a>
-                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                        <a href="#" class="text-white hover:text-gray-900  ms-5">
                             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="currentColor" viewBox="0 0 21 16">
                                 <path
@@ -240,7 +272,7 @@
                             </svg>
                             <span class="sr-only">Discord community</span>
                         </a>
-                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                        <a href="#" class="text-white hover:text-gray-900  ms-5">
                             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="currentColor" viewBox="0 0 20 17">
                                 <path fill-rule="evenodd"
@@ -249,7 +281,7 @@
                             </svg>
                             <span class="sr-only">Twitter page</span>
                         </a>
-                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                        <a href="#" class="text-white hover:text-gray-900  ms-5">
                             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd"
@@ -258,7 +290,7 @@
                             </svg>
                             <span class="sr-only">GitHub account</span>
                         </a>
-                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+                        <a href="#" class="text-white hover:text-gray-900  ms-5">
                             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd"
@@ -276,7 +308,8 @@
 
 
 </body>
-
+<!-- Initializing flatpicker -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
 
     function toggleMobileMenu() {
@@ -289,6 +322,19 @@
         document.getElementById("results").classList.remove("hidden");
     });
 
+
+    flatpickr("#start_date", {
+        enableTime: false,
+        dateFormat: "Y-m-d",
+        toggleMobileMenu: false,
+    });
+
+
+    flatpickr("#end_date", {
+        enableTime: false,
+        dateFormat: "Y-m-d",
+        toggleMobileMenu: false,
+    });
 
 </script>
 
